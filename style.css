@@ -46,7 +46,7 @@ h1::before{
     background-color: rgb(243, 238, 238);
     width: 90%;
     margin: 0 auto 20px auto ;
-    height: 40px;
+    height: 60px;
     display: flex;
     align-items: center ;
 }
@@ -97,7 +97,7 @@ label:hover{
     transition: .5s;
 }
 .pic::before{
-    content: "PHOTO GALLERY";
+    content: "CLICKBYRV";
     position: absolute;
     top : 50%;
     left : 50%;
@@ -133,61 +133,70 @@ label:hover{
     margin-top: 0;
     opacity: 1;
 }
-#check1:checked ~ .container .photo-gallery.pic{
+.pic, .sunset, .sports, .mountain {
 
-   opacity: 1;
-   transform: scale(1);
-   position: relative;
-   transition: .5s;
-
-}
-
-#check2:checked ~ .container .photo-gallery.sunset{
-    
-   transform: scale(1);
-   opacity: 1;
-   position: relative;
-   
-
-}
-#check2:checked ~ .container .photo-gallery.sports,
-#check2:checked ~ .container .photo-gallery.mountain{
-   opacity: 0;
-   transform: scale(0);
-   position: absolute;
-   transition: 0s;
-
-}
-#check3:checked ~ .container .photo-gallery.sports{
-    
-    transform: scale(1);
-    opacity: 1;
-    position: relative;
-    
- 
- }
- #check3:checked ~ .container .photo-gallery.sunset,
- #check3:checked ~ .container .photo-gallery.mountain{
+    overflow: hidden;
+    border-radius: 10px;
     opacity: 0;
     transform: scale(0);
     position: absolute;
-    transition: 0s;
- 
- }
+    transition: .5s;
+}
 
- #check4:checked ~ .container .photo-gallery.mountain{
-    
-    transform: scale(1);
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#check1:checked ~ .container .photo-gallery .pic,
+#check2:checked ~ .container .photo-gallery .sunset,
+#check3:checked ~ .container .photo-gallery .sports,
+#check4:checked ~ .container .photo-gallery .mountain {
     opacity: 1;
+    transform: scale(1);
     position: relative;
+}
+
+@media (max-width: 768px) {
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 992px) {
+    .container {
+      max-width: 992px;
+    }
+  }
+  @media (max-width: 768px) {
+    .top-content {
     
- 
- }
- #check4:checked ~ .container .photo-gallery.photo-gallery.sunset,
- #check4:checked ~ .container .photo-gallery.photo-gallery.sports{
-    opacity: 0;
-    transform: scale(0);
-    position: absolute;
-    transition: 0s;
- 
- }
+            background-color: rgb(243, 238, 238);
+            width: 40%;
+            margin: 0 auto 20px auto ;
+            height: 30px;
+            display: flex;
+            align-items:center ;
+        
+       /* Add your desired styles for the top content area here */
+    }
+    label{
+        display:inline-block;
+        height: 20%;
+        margin:  0 10px;
+        line-height:  10px;
+        font-size: 10px;
+        color:gray;
+        cursor:pointer;
+        transition:  color.5s;
+    
+    
+    }
+    h3{
+        height: 100%;
+        background-color: rgb(184, 182, 182);
+        line-height: 40px;
+        padding: 0 50px;
+        color: white;
+    }
+   }
